@@ -49,4 +49,4 @@ console.log(parent); //Object
 
 // Get Root element
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(parent); // Render will replace whole code from root element.
