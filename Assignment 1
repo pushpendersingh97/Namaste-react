@@ -1,0 +1,39 @@
+Assignment 01 - Inception
+
+What is Emmet?
+Emmet helps in writing HTML and CSS faster by using simple abbreviations that are then converted into code blocks.
+
+Difference between a Library and Framework?
+Library - A library, on the other hand, is a collection of pre-written code that can be used to perform specific tasks
+Examples : React.js
+
+Frameworks - A framework is a set of pre-written code that provides a structure for developing software applications.
+Examples : Angular.js
+
+What is CDN? 
+CDN stand for content delivery network or content disctribution network.
+A content delivery network (CDN) is a network of interconnected servers that speeds up webpage loading for data-heavy application.
+
+Why do we use CDN?
+CDNs were designed to give all internet users a speedier and more consistent experience. Some use cases are follows:
+1. CDN for end users
+2. CDN for content publishers
+3. CDN for service providers
+
+What is React Known as React?
+React is a JavaScript library for building user interfaces. It was developed by Facebook, and the name “React” was chosen because it is meant to help developers build user interfaces that are fast and responsive, or “reactive.” The library was designed to “react” to changes in data.
+
+What is cross-origin in the script tag?
+The <script> cross-origin is used for loading an external script into their domain from a third party server or another domain with the support of HTTP CORS Request.
+cross-origin is used to protect sensitive information from the third party when fetching out the results.
+
+What is difference between React and ReactDOM?
+React library is responsible for creating views and ReactDOM library is responsible to actually render UI in the browser.
+
+What are async and defer?
+Async allows your script to run as soon as it's loaded, without blocking other elements on the page. 
+Defer means your script will only execute after the page has finished loading
+
+
+
+
