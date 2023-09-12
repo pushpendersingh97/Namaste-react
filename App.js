@@ -1,55 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/**
- * <div id="parent">
- *  <div id="child">
- *      <h1></h1>
- *      <h2></h2>
- *  </div>
- * </div>
- */
-
-const parent = React.createElement(
-  "div",
-  {
-    id: "parent",
-  },
-  [
-    React.createElement(
-      "div",
-      {
-        id: "child1",
-      },
-      [
-        React.createElement("h1", {}, "I'm an h1 tag"),
-        React.createElement("h2", {}, "I'm an h2 tag"),
-      ]
-    ),
-    React.createElement(
-      "div",
-      {
-        id: "child2",
-      },
-      [
-        React.createElement("h1", {}, "I'm an h1 tag"),
-        React.createElement("h2", {}, "I'm an h2 tag"),
-      ]
-    ),
-  ]
+// React Element
+const heading = (
+  <h1 id="heading" className="head" tavIndex="5">
+    Namaste React using JSX
+  </h1>
 );
 
-// React object
-// const heading = React.createElement(
-//   "h1",
-//   {
-//     id: "heading",
-//   },
-//   "Hello World from React"
-// );
+// React Functional Component
+const TitleComponent = () => {
+  return (
+      <h1>Title Component</h1>
+  )
+}
 
-console.log(parent); //Object
+const HeadingComponent = () => {
+  return (
+    <div id="container">
+      <TitleComponent />
+      <h1>Namaste React Functional Component</h1>
+    </div>
+  )
+}
 
-// Get Root element
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent); // Render will replace whole code from root element.
+root.render(<HeadingComponent/>);
