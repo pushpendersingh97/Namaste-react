@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import Header from "./Component/header/header";
+
 // React Element
 const elem = <span>React Element</span>
 
@@ -22,6 +24,7 @@ const TitleComponent = () => {
 const HeadingComponent = () => {
   return (
     <div id="container">
+      <Header />
       {/* <TitleComponent /> */}
       { title }
       <h1>Namaste React Functional Component</h1>
