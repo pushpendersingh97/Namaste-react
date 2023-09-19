@@ -17,3 +17,25 @@
 - Error Handling
 - HTTPs
 - Three Shaking - Remove unused code
+
+
+# Food Ordering file
+/**
+ * Header
+ *  - Logo
+ *  - Navbar
+ * Body
+ *  - Search
+ *  - Restaurant Container
+ *    - Restaurant Card
+ *      - Img
+ *      - Name of res, star rating, cuisine, delivery time
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Contact
+ */
+
+# Two type of Export/Import
+  - Default Export/ Import
+  - Named Export/ Import
