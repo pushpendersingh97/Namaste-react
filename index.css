@@ -42,3 +42,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.filter-btn {
+    cursor: pointer;
+    margin: 8px;
+    
+}
