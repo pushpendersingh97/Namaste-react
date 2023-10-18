@@ -23,7 +23,6 @@ const Body = () => {
     );
 
     const json = await data.json();
-    // console.log(json);
 
     // Optional Chaining
     setListOfRestaurants(
@@ -37,24 +36,34 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
-  if(!onlineStatus) return <h1>Please check the internet connection</h1>
+  if (!onlineStatus) return <h1>Please check the internet connection</h1>;
 
   // Conditional Rendering 😊
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
-          <input
-            type="text"
-            className="search-box"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
+    <main>
+      <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center">
+        <div className="flex mb-4">
+          <div className="relative mt-2 rounded-md shadow-sm">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <span className="text-gray-500 sm:text-sm">🔍</span>
+            </div>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              className="block w-full rounded-md border-0 py-1.5 pl-8 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Search..."
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+          </div>
           <button
+            type="button"
+            className="mt-2 ml-2 pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500"
             onClick={() => {
               // Filter the resturant and update the UI
               console.log(searchText);
@@ -69,29 +78,18 @@ const Body = () => {
             Search
           </button>
         </div>
-
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // Filter logic here
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setfilteredResturant(filteredList);
-            console.log(filteredList);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+        <div className="flex flex-wrap justify-center">
+          {filteredResturant.map((restaurant) => (
+            <Link
+              to={"/restaurants/" + restaurant.info.id}
+              key={restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="res-container">
-        {filteredResturant.map((restaurant) => (
-          <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
-            <RestaurantCard resData={restaurant} />
-          </Link>
-        ))}
-      </div>
-    </div>
+    </main>
   );
 };
 
