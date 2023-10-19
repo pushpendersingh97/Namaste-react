@@ -21,10 +21,12 @@ const RestaruantMenu = () => {
     cartOrderabilityNudgeBanner,
   } = resInfo?.cards[0]?.card?.card?.info;
 
-  const { title, itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
+  console.log("info", resInfo?.cards[0]?.card?.card?.info)
 
-  console.log(itemCards);
+  const { title, itemCards } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+
+  console.log("Items Card", itemCards);
 
   return (
     <>
