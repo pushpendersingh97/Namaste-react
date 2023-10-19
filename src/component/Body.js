@@ -39,8 +39,12 @@ const Body = () => {
   if (!onlineStatus) return <h1>Please check the internet connection</h1>;
 
   // Conditional Rendering 😊
-  return listOfRestaurants.length === 0 ? (
-    <Shimmer />
+  return filteredResturant.length === 0 ? (
+    <main>
+      <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center">
+        <Shimmer />
+      </div>
+    </main>
   ) : (
     <main>
       <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center">

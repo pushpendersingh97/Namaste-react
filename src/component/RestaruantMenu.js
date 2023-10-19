@@ -48,7 +48,7 @@ const RestaruantMenu = () => {
             <p className="text-gray-700 flex justify-between">
               <span
                 className={`inline-flex items-center rounded-md  px-2 py-1 text-xs font-medium  ring-1 ring-inset ring-gray-500/10 ${
-                  avgRating > 4
+                  avgRating > 3.5
                     ? "text-green-600 bg-green-100"
                     : "text-red-400 bg-red-100"
                 } `}
