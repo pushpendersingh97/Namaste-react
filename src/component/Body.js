@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withIsOpen } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,6 +12,8 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredResturant, setfilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardIsOpen = withIsOpen(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -33,6 +35,8 @@ const Body = () => {
       json?.data?.cards[2]?.card.card.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  console.log(listOfRestaurants)
 
   const onlineStatus = useOnlineStatus();
 
@@ -88,7 +92,9 @@ const Body = () => {
               to={"/restaurants/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />
+              {
+                restaurant.info.isOpen ? <RestaurantCardIsOpen resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+              }
             </Link>
           ))}
         </div>

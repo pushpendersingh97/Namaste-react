@@ -33,4 +33,17 @@ const RestaurantCard = (props) => {
   );
 };
 
+// Higher order component
+// input RestaurantCard => RestaurantCardIsOpen
+export const withIsOpen = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white ml-3 rounded-md py-1 px-3">IsOpen</label>
+        <RestaurantCard resData={props.resData} />
+      </div>
+    )
+  }
+}
+
 export default RestaurantCard;
